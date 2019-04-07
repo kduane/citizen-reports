@@ -1,8 +1,0 @@
-<h4>Don't see your area on the list?</h4>
-
-<%= link_to 'Add a Locality', new_locality_path %>
-
-<% @localities.each do |locality| %>
-  <%= render partial: "locality", object: locality %>
-
-<% end %>

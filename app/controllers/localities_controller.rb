@@ -15,7 +15,7 @@ class LocalitiesController < ApplicationController
 
   def create
     # binding.pry
-    @locality = Locality.new(Locality_params)
+    @locality = Locality.new(locality_params)
     if @locality.save
       flash[:notice] = 'New Locality saved!'
       redirect_to @locality
@@ -54,6 +54,6 @@ class LocalitiesController < ApplicationController
   private
 
   def locality_params
-    params.require(:locality).permit(:name, :zip_code, :description, :representative)
+    params.require(:locality).permit(:name, :zip_code, :description)
   end
 end

@@ -1,0 +1,19 @@
+<% locality = @locality %>
+<%= render partial: "locality", object: locality %>
+
+<%= link_to 'Got something to report?', new_locality_issue_path(@locality) %>
+
+<% if @locality.issues.nil? %>
+  <h5> Nothing reported yet.</h5>
+<% else %>
+  <% @locality.issues.reverse.each do |issue| %>
+    <h5><%= link_to "#{issue.title}", issue_path(issue) %></h5>
+    Rating:<%= issue.rating %>
+    <p> <%= issue.body%></p>
+    <tr>
+      <td><%= link_to 'Show', issue_path(issue) %></td>
+      <td><%= link_to 'Edit', edit_issue_path(issue) %></td>
+      <td><%= link_to 'Delete', issue, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+<% end %>

@@ -1,0 +1,11 @@
+
+<h4><%= link_to "#{locality.name}", locality_path(locality) %></h4>
+<p><%= locality.description %></p>
+<p><%= locality.representative %></p>
+
+
+<tr>
+  <td><%= link_to 'Show', locality_path(locality) %></td>
+  <td><%= link_to 'Edit', edit_locality_path(locality) %></td>
+  <td><%= link_to 'Delete', locality, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+</tr>

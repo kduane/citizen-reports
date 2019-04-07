@@ -10,7 +10,7 @@ class LocalitiesController < ApplicationController
   end
 
   def new
-    @locality = Locality.newl;kj
+    @locality = Locality.new;
   end
 
   def create

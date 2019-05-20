@@ -1,0 +1,9 @@
+<h5> <%= @issue.title %> </h5>
+Rating:<%= @issue.rating %>
+<p> <%= @issue.body%></p>
+
+<tr>
+  <td><%= link_to 'Show', issue_path(@issue) %></td>
+  <td><%= link_to 'Edit', edit_issue_path(@issue) %></td>
+  <td><%= link_to 'Delete', @issue, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+</tr>
